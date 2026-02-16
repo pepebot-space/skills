@@ -1,0 +1,162 @@
+{
+  "version": 1,
+  "updated_at": "2026-02-16T15:53:00Z",
+  "skills_count": 4,
+  "skills": [
+    {
+      "name": "browser-use",
+      "description": "Automate browser interactions using the `browser-use` CLI. Use `browser-use open`, `browser-use state`, `browser-use click`, `browser-use run`, and `browser-use extract` to navigate websites, fill forms, take screenshots, and perform autonomous browser tasks.",
+      "path": "browser-use",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🌐",
+          "requires": {
+            "bins": [
+              "browser-use"
+            ]
+          },
+          "install": [
+            {
+              "id": "install-script",
+              "kind": "shell",
+              "command": "curl -fsSL https://browser-use.com/cli/install.sh | bash",
+              "bins": [
+                "browser-use"
+              ],
+              "label": "Install browser-use CLI (recommended)"
+            },
+            {
+              "id": "pip",
+              "kind": "pip",
+              "package": "browser-use[cli]",
+              "bins": [
+                "browser-use"
+              ],
+              "label": "Install browser-use CLI (pip)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "claude-code",
+      "description": "Interact with Claude Code using the `claude` CLI. Use `claude`, `claude run`, `claude mcp`, and `claude doctor` to execute coding agents, manage MCP tools, and run autonomous development workflows.",
+      "path": "claude-code",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🧠",
+          "requires": {
+            "bins": [
+              "claude"
+            ]
+          },
+          "install": [
+            {
+              "id": "native-install",
+              "kind": "shell",
+              "command": "curl -fsSL https://claude.ai/install.sh | bash",
+              "bins": [
+                "claude"
+              ],
+              "label": "Install Claude Code CLI (native)"
+            },
+            {
+              "id": "npm",
+              "kind": "npm",
+              "package": "@anthropic-ai/claude-code",
+              "bins": [
+                "claude"
+              ],
+              "label": "Install Claude Code CLI (npm)"
+            },
+            {
+              "id": "brew",
+              "kind": "brew",
+              "formula": "claude-code",
+              "bins": [
+                "claude"
+              ],
+              "label": "Install Claude Code CLI (brew)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "home-assistant",
+      "description": "Interact with Home Assistant using the `ha` CLI and REST API. Use it to list devices and entities, control smart devices, trigger services, and manage automations.",
+      "path": "home-assistant",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🏠",
+          "requires": {
+            "bins": [
+              "ha",
+              "curl"
+            ]
+          },
+          "install": [
+            {
+              "id": "ha-os",
+              "kind": "info",
+              "label": "Home Assistant CLI is included in Home Assistant OS and SSH addon"
+            },
+            {
+              "id": "pip",
+              "kind": "pip",
+              "package": "homeassistant-cli",
+              "bins": [
+                "ha"
+              ],
+              "label": "Install Home Assistant CLI (pip)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "opencode",
+      "description": "Interact with OpenCode using the `opencode` CLI. Use `opencode run`, `opencode agent`, `opencode mcp`, and `opencode models` to execute automation workflows, manage agents, configure tools, and run headless coding tasks.",
+      "path": "opencode",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🤖",
+          "requires": {
+            "bins": [
+              "opencode"
+            ]
+          },
+          "install": [
+            {
+              "id": "install-script",
+              "kind": "shell",
+              "command": "curl -fsSL https://opencode.ai/install | bash",
+              "bins": [
+                "opencode"
+              ],
+              "label": "Install OpenCode CLI (install script)"
+            },
+            {
+              "id": "npm",
+              "kind": "npm",
+              "package": "opencode-ai",
+              "bins": [
+                "opencode"
+              ],
+              "label": "Install OpenCode CLI (npm)"
+            },
+            {
+              "id": "brew",
+              "kind": "brew",
+              "formula": "opencode",
+              "bins": [
+                "opencode"
+              ],
+              "label": "Install OpenCode CLI (brew)"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
