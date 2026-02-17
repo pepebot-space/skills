@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated_at": "2026-02-17T15:47:27Z",
-  "skills_count": 7,
+  "updated_at": "2026-02-17T17:00:50Z",
+  "skills_count": 8,
   "skills": [
     {
       "name": "browser-use",
@@ -230,6 +230,35 @@
               "label": "Install Tailscale CLI (brew)"
             }
           ]
+        }
+      }
+    },
+    {
+      "name": "termux-api",
+      "description": "Control Android device features using Termux API - battery, camera, clipboard, location, notifications, SMS, sensors, and more.",
+      "path": "termux-api",
+      "metadata": {
+        "pepebot": {
+          "emoji": "📱",
+          "requires": {
+            "bins": [
+              "termux-battery-status"
+            ]
+          },
+          "install": [
+            {
+              "id": "termux",
+              "kind": "pkg",
+              "package": "termux-api",
+              "bins": [
+                "termux-battery-status",
+                "termux-notification",
+                "termux-clipboard-get"
+              ],
+              "label": "Install Termux API (pkg install termux-api)"
+            }
+          ],
+          "platform": "android"
         }
       }
     }
