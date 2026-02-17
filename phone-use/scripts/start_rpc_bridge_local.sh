@@ -1,0 +1,210 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  cat <<'USAGE' >&2
+Usage:
+  start_rpc_bridge_local.sh
+
+What this does:
+  - Runs the PhoneAgent UI-test RPC server.
+  - For physical devices (USB or Xcode "Connect via network"), starts a localhost-only forwarder
+    so you can always connect to 127.0.0.1:45678 and the RPC port is not exposed to the LAN.
+    It prefers the CoreDevice tunnel (*.coredevice.local) and falls back to USB via usbmux when available.
+
+Requirements (physical device):
+  - python3
+  - (USB only) pip package: pymobiledevice3 (install into repo-root ./.venv)
+
+Interactive selection:
+  - This script is intentionally interactive. It will list iOS devices and simulators
+    and prompt you to pick one by number.
+USAGE
+}
+
+UDID=""
+RPC_PORT="45678"
+
+pick_destination_interactive() {
+  if [[ ! -e /dev/tty ]]; then
+    echo "No TTY available for interactive selection (missing /dev/tty)." >&2
+    exit 1
+  fi
+
+  local raw
+  raw="$(xcrun xctrace list devices 2>/dev/null || true)"
+  if [[ -z "$raw" ]]; then
+    echo "Failed to list devices via: xcrun xctrace list devices" >&2
+    exit 1
+  fi
+
+  local -a labels
+  local -a ids
+  local in_devices=0
+  local in_sims=0
+  local line id label kind
+
+  while IFS= read -r line; do
+    case "$line" in
+      "== Devices ==") in_devices=1; in_sims=0; continue;;
+      "== Simulators ==") in_devices=0; in_sims=1; continue;;
+    esac
+
+    [[ -z "$line" ]] && continue
+    if (( !in_devices && !in_sims )); then
+      continue
+    fi
+
+    # Skip the host Mac entry and any non-iOS-ish entries to avoid invalid destinations.
+    if (( in_devices )) && [[ "$line" == Mac* ]]; then
+      continue
+    fi
+    if [[ "$line" != *iPhone* && "$line" != *iPad* && "$line" != *iPod* && "$line" != *Simulator* ]]; then
+      continue
+    fi
+
+    # xctrace lines can contain multiple (...) groups (e.g. device + OS + id).
+    # Capture the final (...) token as the id and keep the preceding text as display label.
+    line="${line%$'\r'}"
+    if [[ "$line" =~ ^(.*)[[:space:]]\(([^()]*)\)[[:space:]]*$ ]]; then
+      label="${BASH_REMATCH[1]}"
+      id="${BASH_REMATCH[2]}"
+    else
+      continue
+    fi
+    kind="device"
+    if (( in_sims )); then
+      kind="sim"
+    fi
+
+    labels+=("$label [$kind]")
+    ids+=("$id")
+  done <<<"$raw"
+
+  if ((${#ids[@]} == 0)); then
+    echo "No iOS devices/simulators found in: xcrun xctrace list devices" >&2
+    exit 1
+  fi
+
+  echo "Select destination:" >&2
+  local i
+  for i in "${!labels[@]}"; do
+    printf '%d) %s\n' "$((i + 1))" "${labels[$i]}" >&2
+  done
+
+  local choice=""
+  local default_choice="1"
+  while true; do
+    printf 'Enter number (1-%d) [default %s]: ' "${#ids[@]}" "$default_choice" >&2
+    IFS= read -r choice </dev/tty || true
+
+    if [[ -z "$choice" ]]; then
+      choice="$default_choice"
+    fi
+
+    if [[ "$choice" =~ ^[0-9]+$ ]] && (( choice >= 1 && choice <= ${#ids[@]} )); then
+      UDID="${ids[$((choice - 1))]}"
+      break
+    fi
+  done
+}
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -h|--help)
+      usage; exit 0;;
+    *)
+      echo "Unknown arg: $1" >&2
+      usage
+      exit 2;;
+  esac
+done
+
+pick_destination_interactive
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(git -C "$SCRIPT_DIR" rev-parse --show-toplevel 2>/dev/null || true)"
+if [[ -z "$REPO_ROOT" ]]; then
+  # Fallback for when git isn't available: this file lives at
+  # <repo>/.agents/skills/phoneagent/scripts/start_rpc_bridge_local.sh.
+  REPO_ROOT="$(cd "$SCRIPT_DIR/../../../../" && pwd)"
+fi
+
+if [[ ! -d "$REPO_ROOT/PhoneAgent.xcodeproj" ]]; then
+  echo "Could not locate PhoneAgent.xcodeproj under: $REPO_ROOT" >&2
+  echo "Run this script from a PhoneAgent repo checkout." >&2
+  exit 1
+fi
+
+PYTHON="python3"
+if [[ -x "$REPO_ROOT/.venv/bin/python" ]]; then
+  PYTHON="$REPO_ROOT/.venv/bin/python"
+fi
+
+is_simulator_udid() {
+  "$PYTHON" - "$UDID" <<'PY'
+import json
+import subprocess
+import sys
+
+udid = sys.argv[1].lower()
+raw = subprocess.check_output(["xcrun", "simctl", "list", "devices", "-j"])
+data = json.loads(raw)
+for _, devices in (data.get("devices") or {}).items():
+    for d in devices or []:
+        if str(d.get("udid", "")).lower() == udid:
+            print("simulator")
+            raise SystemExit(0)
+raise SystemExit(1)
+PY
+}
+
+FORWARD_PID=""
+cleanup() {
+  if [[ -n "${FORWARD_PID:-}" ]]; then
+    kill "$FORWARD_PID" 2>/dev/null || true
+  fi
+}
+trap cleanup EXIT INT TERM
+
+# Cache simulator check; calling it twice is slow and hits xcrun each time.
+IS_SIMULATOR=0
+if is_simulator_udid >/dev/null 2>&1; then
+  IS_SIMULATOR=1
+fi
+
+if ((IS_SIMULATOR)); then
+  echo "Simulator detected; use RPC host 127.0.0.1:$RPC_PORT (wait for PHONEAGENT_RPC_READY ... in logs)" >&2
+else
+  echo "Physical device detected; starting localhost forward: 127.0.0.1:$RPC_PORT -> device:$RPC_PORT" >&2
+  "$PYTHON" "$SCRIPT_DIR/forward_rpc_localhost.py" \
+    --udid "$UDID" &
+  FORWARD_PID="$!"
+
+  # Give the forwarder a moment to bind; fail fast if it died (missing deps, port in use, etc).
+  sleep 0.2
+  kill -0 "$FORWARD_PID" 2>/dev/null || { echo "Port forwarder failed to start." >&2; exit 1; }
+
+  echo "Port forwarder is listening on 127.0.0.1:$RPC_PORT (wait for PHONEAGENT_RPC_READY ... in logs)" >&2
+fi
+
+# Start the test-hosted JSON-RPC server via a single UI-test entrypoint.
+XCODEBUILD_CODESIGN_ARGS=()
+if ((IS_SIMULATOR)); then
+  # Simulator builds don't need signing; disabling it avoids requiring a configured signing identity.
+  XCODEBUILD_CODESIGN_ARGS=(CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO)
+fi
+
+XCODEBUILD_ARGS=(
+  xcodebuild
+  test
+  -project "$REPO_ROOT/PhoneAgent.xcodeproj"
+  -scheme "PhoneAgent"
+  -destination "id=$UDID"
+  -only-testing:PhoneAgentUITests/PhoneAgent/testRPCBridge
+)
+if ((${#XCODEBUILD_CODESIGN_ARGS[@]})); then
+  XCODEBUILD_ARGS+=("${XCODEBUILD_CODESIGN_ARGS[@]}")
+fi
+
+"${XCODEBUILD_ARGS[@]}"
