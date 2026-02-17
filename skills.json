@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated_at": "2026-02-17T05:28:13Z",
-  "skills_count": 6,
+  "updated_at": "2026-02-17T15:47:27Z",
+  "skills_count": 7,
   "skills": [
     {
       "name": "browser-use",
@@ -192,6 +192,11 @@
           ]
         }
       }
+    },
+    {
+      "name": "phone-use",
+      "description": "Control a connected iPhone, iOS simulator, Android emulator, or Android device from macOS through PhoneAgent's JSON-RPC bridge. Use when users ask to automate mobile UI actions, inspect accessibility trees, toggle Settings switches, navigate apps, or capture screenshots by sending RPC methods like get_tree, get_screen_image, get_context, tap_element, enter_text, scroll, swipe, and open_app.",
+      "path": "phone-use"
     },
     {
       "name": "tailscale",
