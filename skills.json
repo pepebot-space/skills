@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated_at": "2026-02-17T15:47:27Z",
-  "skills_count": 7,
+  "updated_at": "2026-02-18T00:35:00Z",
+  "skills_count": 54,
   "skills": [
     {
       "name": "browser-use",
@@ -228,6 +228,639 @@
                 "tailscale"
               ],
               "label": "Install Tailscale CLI (brew)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "algorithmic-art",
+      "description": "Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems.",
+      "path": "algorithmic-art",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🎨"
+        }
+      }
+    },
+    {
+      "name": "artifacts-builder",
+      "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
+      "path": "artifacts-builder",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🏗️"
+        }
+      }
+    },
+    {
+      "name": "ask-questions-if-underspecified",
+      "description": "Clarify requirements before implementing. Do not use automatically, only when invoked explicitly.",
+      "path": "ask-questions-if-underspecified",
+      "metadata": {
+        "pepebot": {
+          "emoji": "❓"
+        }
+      }
+    },
+    {
+      "name": "backend-development",
+      "description": "Backend API design, database architecture, microservices patterns, and test-driven development. Use for designing APIs, database schemas, or backend system architecture.",
+      "path": "backend-development",
+      "metadata": {
+        "pepebot": {
+          "emoji": "⚙️"
+        }
+      }
+    },
+    {
+      "name": "best-practices",
+      "description": "Transforms vague prompts into optimized Claude Code prompts. Adds verification, specific context, constraints, and proper phasing. Invoke with /best-practices.",
+      "path": "best-practices",
+      "metadata": {
+        "pepebot": {
+          "emoji": "✅"
+        }
+      }
+    },
+    {
+      "name": "brand-guidelines",
+      "description": "Apply brand colors and typography to artifacts. Use when brand colors, style guidelines, visual formatting, or company design standards apply. Ensures consistency across branded content.",
+      "path": "brand-guidelines",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🎯"
+        }
+      }
+    },
+    {
+      "name": "canvas-design",
+      "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. Use when the user asks to create a poster, piece of art, design, or other static visual piece. Creates original visual designs.",
+      "path": "canvas-design",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🖌️"
+        }
+      }
+    },
+    {
+      "name": "changelog-generator",
+      "description": "Automatically creates user-facing changelogs from git commits by analyzing commit history, categorizing changes, and transforming technical commits into clear, customer-friendly release notes. Turns hours of manual changelog writing into minutes of automated generation.",
+      "path": "changelog-generator",
+      "metadata": {
+        "pepebot": {
+          "emoji": "📋"
+        }
+      }
+    },
+    {
+      "name": "code-documentation",
+      "description": "Writing effective code documentation - API docs, README files, inline comments, and technical guides. Use for documenting codebases, APIs, or writing developer guides.",
+      "path": "code-documentation",
+      "metadata": {
+        "pepebot": {
+          "emoji": "📝"
+        }
+      }
+    },
+    {
+      "name": "code-refactoring",
+      "description": "Code refactoring patterns and techniques for improving code quality without changing behavior. Use for cleaning up legacy code, reducing complexity, or improving maintainability.",
+      "path": "code-refactoring",
+      "metadata": {
+        "pepebot": {
+          "emoji": "♻️"
+        }
+      }
+    },
+    {
+      "name": "code-review",
+      "description": "Automated code review for pull requests using specialized review patterns. Analyzes code for quality, security, performance, and best practices. Use when reviewing code changes, PRs, or doing code audits.",
+      "path": "code-review",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🔍"
+        }
+      }
+    },
+    {
+      "name": "competitive-ads-extractor",
+      "description": "Extracts and analyzes competitors' ads from ad libraries (Facebook, LinkedIn, etc.) to understand what messaging, problems, and creative approaches are working. Helps inspire and improve your own ad campaigns.",
+      "path": "competitive-ads-extractor",
+      "metadata": {
+        "pepebot": {
+          "emoji": "📊"
+        }
+      }
+    },
+    {
+      "name": "content-research-writer",
+      "description": "Assists in writing high-quality content by conducting research, adding citations, improving hooks, iterating on outlines, and providing real-time feedback on each section. Transforms your writing process from solo effort to collaborative partnership.",
+      "path": "content-research-writer",
+      "metadata": {
+        "pepebot": {
+          "emoji": "✍️"
+        }
+      }
+    },
+    {
+      "name": "database-design",
+      "description": "Database schema design, optimization, and migration patterns for PostgreSQL, MySQL, and NoSQL databases. Use for designing schemas, writing migrations, or optimizing queries.",
+      "path": "database-design",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🗄️"
+        }
+      }
+    },
+    {
+      "name": "developer-growth-analysis",
+      "description": "Analyzes your recent Claude Code chat history to identify coding patterns, development gaps, and areas for improvement, curates relevant learning resources from HackerNews, and automatically sends a personalized growth report to your Slack DMs.",
+      "path": "developer-growth-analysis",
+      "metadata": {
+        "pepebot": {
+          "emoji": "📈"
+        }
+      }
+    },
+    {
+      "name": "doc-coauthoring",
+      "description": "Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This workflow helps users efficiently transfer context, refine content through iteration, and verify the doc works for readers. Trigger when user mentions writing docs, creating proposals, drafting specs, or similar documentation tasks.",
+      "path": "doc-coauthoring",
+      "metadata": {
+        "pepebot": {
+          "emoji": "📄"
+        }
+      }
+    },
+    {
+      "name": "docx",
+      "description": "Comprehensive document creation, editing, and analysis with support for tracked changes, comments, formatting preservation, and text extraction. When Claude needs to work with professional documents (.docx files) for creating new documents, modifying content, working with tracked changes, or adding comments.",
+      "path": "docx",
+      "metadata": {
+        "pepebot": {
+          "emoji": "📑",
+          "requires": {
+            "bins": [
+              "pandoc"
+            ]
+          },
+          "install": [
+            {
+              "id": "brew",
+              "kind": "brew",
+              "formula": "pandoc",
+              "bins": [
+                "pandoc"
+              ],
+              "label": "Install pandoc (brew)"
+            },
+            {
+              "id": "apt",
+              "kind": "shell",
+              "command": "sudo apt-get install -y pandoc",
+              "bins": [
+                "pandoc"
+              ],
+              "label": "Install pandoc (apt)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "domain-name-brainstormer",
+      "description": "Generates creative domain name ideas for your project and checks availability across multiple TLDs (.com, .io, .dev, .ai, etc.). Saves hours of brainstorming and manual checking.",
+      "path": "domain-name-brainstormer",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🌍"
+        }
+      }
+    },
+    {
+      "name": "expo-app-design",
+      "description": "Build beautiful cross-platform mobile apps with Expo Router, NativeWind, and React Native.",
+      "path": "expo-app-design",
+      "metadata": {
+        "pepebot": {
+          "emoji": "📱",
+          "requires": {
+            "bins": [
+              "npx"
+            ]
+          },
+          "install": [
+            {
+              "id": "npm",
+              "kind": "npm",
+              "package": "expo",
+              "bins": [
+                "npx"
+              ],
+              "label": "Install Expo CLI (npm)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "expo-deployment",
+      "description": "Deploy Expo apps to iOS App Store, Android Play Store, and web.",
+      "path": "expo-deployment",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🚀",
+          "requires": {
+            "bins": [
+              "eas"
+            ]
+          },
+          "install": [
+            {
+              "id": "npm",
+              "kind": "npm",
+              "package": "eas-cli",
+              "bins": [
+                "eas"
+              ],
+              "label": "Install EAS CLI (npm)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "file-organizer",
+      "description": "Intelligently organizes your files and folders across your computer by understanding context, finding duplicates, suggesting better structures, and automating cleanup tasks. Reduces cognitive load and keeps your digital workspace tidy without manual effort.",
+      "path": "file-organizer",
+      "metadata": {
+        "pepebot": {
+          "emoji": "📂"
+        }
+      }
+    },
+    {
+      "name": "frontend-design",
+      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics.",
+      "path": "frontend-design",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🎨"
+        }
+      }
+    },
+    {
+      "name": "image-enhancer",
+      "description": "Improves the quality of images, especially screenshots, by enhancing resolution, sharpness, and clarity. Perfect for preparing images for presentations, documentation, or social media posts.",
+      "path": "image-enhancer",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🖼️"
+        }
+      }
+    },
+    {
+      "name": "internal-comms",
+      "description": "Write internal communications using company formats. Use when writing status reports, leadership updates, company newsletters, FAQs, incident reports, project updates, or any internal communications.",
+      "path": "internal-comms",
+      "metadata": {
+        "pepebot": {
+          "emoji": "💬"
+        }
+      }
+    },
+    {
+      "name": "invoice-organizer",
+      "description": "Automatically organizes invoices and receipts for tax preparation by reading messy files, extracting key information, renaming them consistently, and sorting them into logical folders. Turns hours of manual bookkeeping into minutes of automated organization.",
+      "path": "invoice-organizer",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🧾"
+        }
+      }
+    },
+    {
+      "name": "javascript-typescript",
+      "description": "JavaScript and TypeScript development with ES6+, Node.js, React, and modern web frameworks. Use for frontend, backend, or full-stack JavaScript/TypeScript projects.",
+      "path": "javascript-typescript",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🟨"
+        }
+      }
+    },
+    {
+      "name": "jira-issues",
+      "description": "Create, update, and manage Jira issues from natural language. Use when the user wants to log bugs, create tickets, update issue status, or manage their Jira backlog.",
+      "path": "jira-issues",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🎫"
+        }
+      }
+    },
+    {
+      "name": "job-application",
+      "description": "Write tailored cover letters and job applications using your CV and preferred style",
+      "path": "job-application",
+      "metadata": {
+        "pepebot": {
+          "emoji": "💼"
+        }
+      }
+    },
+    {
+      "name": "lead-research-assistant",
+      "description": "Identifies high-quality leads for your product or service by analyzing your business, searching for target companies, and providing actionable contact strategies. Perfect for sales, business development, and marketing professionals.",
+      "path": "lead-research-assistant",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🔬"
+        }
+      }
+    },
+    {
+      "name": "llm-application-dev",
+      "description": "Building applications with Large Language Models - prompt engineering, RAG patterns, and LLM integration. Use for AI-powered features, chatbots, or LLM-based automation.",
+      "path": "llm-application-dev",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🤖"
+        }
+      }
+    },
+    {
+      "name": "mcp-builder",
+      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+      "path": "mcp-builder",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🔧"
+        }
+      }
+    },
+    {
+      "name": "meeting-insights-analyzer",
+      "description": "Analyzes meeting transcripts and recordings to uncover behavioral patterns, communication insights, and actionable feedback. Identifies when you avoid conflict, use filler words, dominate conversations, or miss opportunities to listen. Perfect for professionals seeking to improve their communication and leadership skills.",
+      "path": "meeting-insights-analyzer",
+      "metadata": {
+        "pepebot": {
+          "emoji": "📅"
+        }
+      }
+    },
+    {
+      "name": "pdf",
+      "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically process, generate, or analyze PDF documents at scale.",
+      "path": "pdf",
+      "metadata": {
+        "pepebot": {
+          "emoji": "📕",
+          "requires": {
+            "bins": [
+              "pypdf"
+            ]
+          },
+          "install": [
+            {
+              "id": "pip-pypdf",
+              "kind": "pip",
+              "package": "pypdf",
+              "bins": [],
+              "label": "Install pypdf (pip)"
+            },
+            {
+              "id": "pip-pdfplumber",
+              "kind": "pip",
+              "package": "pdfplumber",
+              "bins": [],
+              "label": "Install pdfplumber (pip)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "pptx",
+      "description": "Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for creating new presentations, modifying content, working with layouts, adding speaker notes, or any presentation tasks.",
+      "path": "pptx",
+      "metadata": {
+        "pepebot": {
+          "emoji": "📊",
+          "requires": {
+            "bins": [
+              "python3"
+            ]
+          },
+          "install": [
+            {
+              "id": "pip",
+              "kind": "pip",
+              "package": "python-pptx",
+              "bins": [],
+              "label": "Install python-pptx (pip)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "python-development",
+      "description": "Modern Python development with Python 3.12+, Django, FastAPI, async patterns, and production best practices. Use for Python projects, APIs, data processing, or automation scripts.",
+      "path": "python-development",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🐍"
+        }
+      }
+    },
+    {
+      "name": "qa-regression",
+      "description": "Automate QA regression testing with reusable test skills. Create login flows, dashboard checks, user creation, and other common test scenarios that run consistently.",
+      "path": "qa-regression",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🧪"
+        }
+      }
+    },
+    {
+      "name": "raffle-winner-picker",
+      "description": "Picks random winners from lists, spreadsheets, or Google Sheets for giveaways, raffles, and contests. Ensures fair, unbiased selection with transparency.",
+      "path": "raffle-winner-picker",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🎲"
+        }
+      }
+    },
+    {
+      "name": "react-best-practices",
+      "description": "React development guidelines with hooks, component patterns, state management, and performance optimization.",
+      "path": "react-best-practices",
+      "metadata": {
+        "pepebot": {
+          "emoji": "⚛️"
+        }
+      }
+    },
+    {
+      "name": "skill-creator",
+      "description": "Guide for creating effective skills. Use when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations.",
+      "path": "skill-creator",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🛠️"
+        }
+      }
+    },
+    {
+      "name": "slack-gif-creator",
+      "description": "Toolkit for creating animated GIFs optimized for Slack, with validators for size constraints and composable animation primitives. This skill applies when users request animated GIFs or emoji animations for Slack from descriptions like \"make me a GIF for Slack of X doing Y\".",
+      "path": "slack-gif-creator",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🎬"
+        }
+      }
+    },
+    {
+      "name": "theme-factory",
+      "description": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.",
+      "path": "theme-factory",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🎭"
+        }
+      }
+    },
+    {
+      "name": "upgrading-expo",
+      "description": "Guidelines for upgrading Expo SDK versions and fixing dependency issues.",
+      "path": "upgrading-expo",
+      "metadata": {
+        "pepebot": {
+          "emoji": "⬆️"
+        }
+      }
+    },
+    {
+      "name": "vercel-deploy",
+      "description": "Deploy applications to Vercel with edge functions, serverless, and ISR.",
+      "path": "vercel-deploy",
+      "metadata": {
+        "pepebot": {
+          "emoji": "▲",
+          "requires": {
+            "bins": [
+              "vercel"
+            ]
+          },
+          "install": [
+            {
+              "id": "npm",
+              "kind": "npm",
+              "package": "vercel",
+              "bins": [
+                "vercel"
+              ],
+              "label": "Install Vercel CLI (npm)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "video-downloader",
+      "description": "Downloads videos from YouTube and other platforms for offline viewing, editing, or archival. Handles various formats and quality options.",
+      "path": "video-downloader",
+      "metadata": {
+        "pepebot": {
+          "emoji": "📹",
+          "requires": {
+            "bins": [
+              "yt-dlp"
+            ]
+          },
+          "install": [
+            {
+              "id": "pip",
+              "kind": "pip",
+              "package": "yt-dlp",
+              "bins": [
+                "yt-dlp"
+              ],
+              "label": "Install yt-dlp (pip)"
+            },
+            {
+              "id": "brew",
+              "kind": "brew",
+              "formula": "yt-dlp",
+              "bins": [
+                "yt-dlp"
+              ],
+              "label": "Install yt-dlp (brew)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "web-design-guidelines",
+      "description": "Modern web design principles for responsive layouts, accessibility, and visual hierarchy.",
+      "path": "web-design-guidelines",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🌐"
+        }
+      }
+    },
+    {
+      "name": "webapp-testing",
+      "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
+      "path": "webapp-testing",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🧪",
+          "requires": {
+            "bins": [
+              "npx"
+            ]
+          },
+          "install": [
+            {
+              "id": "npm",
+              "kind": "npm",
+              "package": "playwright",
+              "bins": [
+                "npx"
+              ],
+              "label": "Install Playwright (npm)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "xlsx",
+      "description": "Comprehensive spreadsheet creation, editing, and analysis with support for formulas, formatting, data analysis, and visualization. When Claude needs to work with spreadsheets (.xlsx, .xlsm, .csv, .tsv, etc) for creating new spreadsheets, reading/analyzing data, modifying existing spreadsheets, or recalculating formulas.",
+      "path": "xlsx",
+      "metadata": {
+        "pepebot": {
+          "emoji": "📊",
+          "requires": {
+            "bins": [
+              "python3"
+            ]
+          },
+          "install": [
+            {
+              "id": "pip",
+              "kind": "pip",
+              "package": "openpyxl",
+              "bins": [],
+              "label": "Install openpyxl (pip)"
             }
           ]
         }
