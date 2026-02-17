@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated_at": "2026-02-16T15:53:42Z",
-  "skills_count": 4,
+  "updated_at": "2026-02-17T05:13:57Z",
+  "skills_count": 6,
   "skills": [
     {
       "name": "browser-use",
@@ -83,6 +83,41 @@
       }
     },
     {
+      "name": "cloudflared",
+      "description": "Create and manage Cloudflare Tunnel connections using the `cloudflared` CLI. Use this skill to authenticate, create tunnels, route DNS records, expose local services securely, and run persistent zero-trust service tunnels.",
+      "path": "cloudflared",
+      "metadata": {
+        "pepebot": {
+          "emoji": "☁️",
+          "requires": {
+            "bins": [
+              "cloudflared"
+            ]
+          },
+          "install": [
+            {
+              "id": "linux",
+              "kind": "shell",
+              "command": "curl -L https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 -o cloudflared && chmod +x cloudflared && sudo mv cloudflared /usr/local/bin/",
+              "bins": [
+                "cloudflared"
+              ],
+              "label": "Install cloudflared CLI (Linux)"
+            },
+            {
+              "id": "brew",
+              "kind": "brew",
+              "formula": "cloudflared",
+              "bins": [
+                "cloudflared"
+              ],
+              "label": "Install cloudflared (brew)"
+            }
+          ]
+        }
+      }
+    },
+    {
       "name": "home-assistant",
       "description": "Interact with Home Assistant using the `ha` CLI and REST API. Use it to list devices and entities, control smart devices, trigger services, and manage automations.",
       "path": "home-assistant",
@@ -153,6 +188,41 @@
                 "opencode"
               ],
               "label": "Install OpenCode CLI (brew)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "tailscale-autonomous",
+      "description": "Manage secure infrastructure connectivity using the `tailscale` CLI. Use this skill for authentication, node discovery, remote SSH orchestration, subnet routing, service exposure, and autonomous multi-node infrastructure workflows.",
+      "path": "tailscale",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🔐",
+          "requires": {
+            "bins": [
+              "tailscale"
+            ]
+          },
+          "install": [
+            {
+              "id": "linux",
+              "kind": "shell",
+              "command": "curl -fsSL https://tailscale.com/install.sh | sh",
+              "bins": [
+                "tailscale"
+              ],
+              "label": "Install Tailscale CLI (Linux)"
+            },
+            {
+              "id": "brew",
+              "kind": "brew",
+              "formula": "tailscale",
+              "bins": [
+                "tailscale"
+              ],
+              "label": "Install Tailscale CLI (brew)"
             }
           ]
         }
