@@ -1,5 +1,5 @@
 ---
-name: tailscale-autonomous
+name: tailscale
 description: "Manage secure infrastructure connectivity using the `tailscale` CLI. Use this skill for authentication, node discovery, remote SSH orchestration, subnet routing, service exposure, and autonomous multi-node infrastructure workflows."
 metadata: {
   "pepebot": {
