@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-02-17T05:13:57Z",
+  "updated_at": "2026-02-17T05:28:13Z",
   "skills_count": 6,
   "skills": [
     {
@@ -194,7 +194,7 @@
       }
     },
     {
-      "name": "tailscale-autonomous",
+      "name": "tailscale",
       "description": "Manage secure infrastructure connectivity using the `tailscale` CLI. Use this skill for authentication, node discovery, remote SSH orchestration, subnet routing, service exposure, and autonomous multi-node infrastructure workflows.",
       "path": "tailscale",
       "metadata": {
