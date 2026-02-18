@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated_at": "2026-02-18T00:48:30Z",
-  "skills_count": 56,
+  "updated_at": "2026-02-18T05:46:43Z",
+  "skills_count": 58,
   "skills": [
     {
       "name": "algorithmic-art",
@@ -658,6 +658,16 @@
       }
     },
     {
+      "name": "prd",
+      "description": "Generate a Product Requirements Document (PRD) for a new feature. Use when planning a feature, starting a new project, or when asked to create a PRD. Triggers on: create a prd, write prd for, plan this feature, requirements for, spec out.",
+      "path": "prd",
+      "metadata": {
+        "pepebot": {
+          "emoji": "📋"
+        }
+      }
+    },
+    {
       "name": "python-development",
       "description": "Modern Python development with Python 3.12+, Django, FastAPI, async patterns, and production best practices. Use for Python projects, APIs, data processing, or automation scripts.",
       "path": "python-development",
@@ -684,6 +694,42 @@
       "metadata": {
         "pepebot": {
           "emoji": "🎲"
+        }
+      }
+    },
+    {
+      "name": "ralph",
+      "description": "Autonomous AI agent loop that runs coding tools (Amp, Claude Code, Gemini CLI, or OpenCode) repeatedly until all PRD items are complete. Use `ralph.sh` to deploy long-running autonomous development tasks, manage feature branches, track progress via prd.json, and auto-archive completed runs.",
+      "path": "ralph",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🔁",
+          "requires": {
+            "bins": [
+              "jq",
+              "git"
+            ]
+          },
+          "install": [
+            {
+              "id": "brew-jq",
+              "kind": "brew",
+              "formula": "jq",
+              "bins": [
+                "jq"
+              ],
+              "label": "Install jq (brew)"
+            },
+            {
+              "id": "apt-jq",
+              "kind": "shell",
+              "command": "sudo apt-get install -y jq",
+              "bins": [
+                "jq"
+              ],
+              "label": "Install jq (apt)"
+            }
+          ]
         }
       }
     },
