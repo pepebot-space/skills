@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated_at": "2026-02-17T17:54:17Z",
-  "skills_count": 55,
+  "updated_at": "2026-02-18T00:48:30Z",
+  "skills_count": 56,
   "skills": [
     {
       "name": "algorithmic-art",
@@ -565,6 +565,33 @@
                 "opencode"
               ],
               "label": "Install OpenCode CLI (brew)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "orcinus",
+      "description": "Container orchestration management for Docker Swarm using the `orcinus` CLI. Use `orcinus create`, `orcinus ls`, `orcinus scale`, `orcinus update`, `orcinus rollback`, `orcinus logs`, and `orcinus cluster` to deploy services, manage clusters, and orchestrate containers via orcinus.yml manifests.",
+      "path": "orcinus",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🐳",
+          "requires": {
+            "bins": [
+              "orcinus",
+              "docker"
+            ]
+          },
+          "install": [
+            {
+              "id": "npm",
+              "kind": "npm",
+              "package": "orcinus",
+              "bins": [
+                "orcinus"
+              ],
+              "label": "Install Orcinus CLI (npm)"
             }
           ]
         }
