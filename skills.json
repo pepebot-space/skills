@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated_at": "2026-02-18T05:46:43Z",
+  "updated_at": "2026-02-18T06:24:46Z",
   "skills_count": 58,
   "skills": [
     {
@@ -164,7 +164,7 @@
     },
     {
       "name": "cloudflared",
-      "description": "Create and manage Cloudflare Tunnel connections using the `cloudflared` CLI. Use this skill to authenticate, create tunnels, route DNS records, expose local services securely, and run persistent zero-trust service tunnels.",
+      "description": "Expose local services to the internet using Cloudflare Tunnel (`cloudflared`). Create named tunnels, route DNS to subdomains, run persistent tunnels, and manage tunnel lifecycle — all automated by the AI agent.",
       "path": "cloudflared",
       "metadata": {
         "pepebot": {
