@@ -2,7 +2,7 @@
 
 A curated collection of AI agent skills for PEPEBOT. Each skill provides specialized knowledge, workflows, or tool integrations.
 
-## 📦 Skills (56)
+## 📦 Skills (58)
 
 ### 🤖 AI & Agent Tools
 | Skill | Description |
@@ -14,6 +14,8 @@ A curated collection of AI agent skills for PEPEBOT. Each skill provides special
 | 📱 [termux-api](./termux-api) | Android device control via Termux API — battery, camera, SMS, sensors |
 | 🤖 [llm-application-dev](./llm-application-dev) | Build LLM applications — prompt engineering, RAG patterns, AI integration |
 | 🔧 [mcp-builder](./mcp-builder) | Create MCP servers for LLM-to-service integration (Python/Node) |
+| 📋 [prd](./prd) | Generate Product Requirements Documents for features and projects |
+| 🔁 [ralph](./ralph) | Autonomous AI agent loop — runs until all PRD items are complete |
 | 🛠️ [skill-creator](./skill-creator) | Guide for creating new PEPEBOT skills |
 
 ### 🌐 Infrastructure & DevOps
