@@ -2,7 +2,7 @@
 
 A curated collection of AI agent skills for PEPEBOT. Each skill provides specialized knowledge, workflows, or tool integrations.
 
-## 📦 Skills (55)
+## 📦 Skills (56)
 
 ### 🤖 AI & Agent Tools
 | Skill | Description |
@@ -24,6 +24,7 @@ A curated collection of AI agent skills for PEPEBOT. Each skill provides special
 | 🏠 [home-assistant](./home-assistant) | Home Assistant CLI & REST API — smart device control, automations |
 | ▲ [vercel-deploy](./vercel-deploy) | Deploy to Vercel — edge functions, serverless, ISR |
 | 🚀 [expo-deployment](./expo-deployment) | Deploy Expo apps to App Store, Play Store, and web |
+| 🐳 [orcinus](./orcinus) | Docker Swarm orchestration — deploy services, manage clusters via orcinus.yml |
 
 ### 💻 Development
 | Skill | Description |
