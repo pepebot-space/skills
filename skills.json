@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated_at": "2026-02-18T06:24:46Z",
-  "skills_count": 58,
+  "updated_at": "2026-02-19T05:10:50Z",
+  "skills_count": 59,
   "skills": [
     {
       "name": "algorithmic-art",
@@ -536,6 +536,51 @@
           "requires": {
             "bins": [
               "opencode"
+            ]
+          },
+          "install": [
+            {
+              "id": "install-script",
+              "kind": "shell",
+              "command": "curl -fsSL https://opencode.ai/install | bash",
+              "bins": [
+                "opencode"
+              ],
+              "label": "Install OpenCode CLI (install script)"
+            },
+            {
+              "id": "npm",
+              "kind": "npm",
+              "package": "opencode-ai",
+              "bins": [
+                "opencode"
+              ],
+              "label": "Install OpenCode CLI (npm)"
+            },
+            {
+              "id": "brew",
+              "kind": "brew",
+              "formula": "opencode",
+              "bins": [
+                "opencode"
+              ],
+              "label": "Install OpenCode CLI (brew)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "opencode-api",
+      "description": "Interact with OpenCode programmatically via its HTTP server API. Start a headless server with `opencode serve`, then use REST endpoints to manage sessions, send prompts, search files, control agents, and stream events — ideal for automation, CI/CD, and building custom AI coding workflows.",
+      "path": "opencode-api",
+      "metadata": {
+        "pepebot": {
+          "emoji": "🔌",
+          "requires": {
+            "bins": [
+              "opencode",
+              "curl"
             ]
           },
           "install": [
