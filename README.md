@@ -2,13 +2,14 @@
 
 A curated collection of AI agent skills for PEPEBOT. Each skill provides specialized knowledge, workflows, or tool integrations.
 
-## 📦 Skills (58)
+## 📦 Skills (59)
 
 ### 🤖 AI & Agent Tools
 | Skill | Description |
 |-------|-------------|
 | 🧠 [claude-code](./claude-code) | Interact with Claude Code CLI — run coding agents, manage MCP tools, autonomous workflows |
 | 🤖 [opencode](./opencode) | OpenCode CLI — automation workflows, agents, headless coding tasks |
+| 🔌 [opencode-api](./opencode-api) | OpenCode HTTP server API — sessions, prompts, files, events via REST |
 | 🌐 [browser-use](./browser-use) | Automate browser interactions — navigate, fill forms, screenshots, autonomous tasks |
 | 📱 [phone-use](./phone-use) | Control iPhone/Android via PhoneAgent JSON-RPC — UI automation, accessibility trees |
 | 📱 [termux-api](./termux-api) | Android device control via Termux API — battery, camera, SMS, sensors |
